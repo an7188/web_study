@@ -8,3 +8,14 @@
 
 ▪️실습 코드 리뷰
 
+
+
+# 🔍 VS code 단축키
+
+블록 주석 : : ctrl+shift+/
+
+코드 실행: ctrl+F11
+
+새 프로젝트 : alt+shift+N
+
+한 줄 복사 : Ctrl + Alt + ↑
