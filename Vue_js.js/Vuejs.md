@@ -42,6 +42,19 @@ Vue는 View와 Model을 연결하고 자동으로 바인딩하므로 양방향 �
 
 
 
+### Vue Instance Life Cycle
+
+| life cycle 속성 | 설명                                                      |
+| --------------- | --------------------------------------------------------- |
+| beforeCreate    | Vue Instance가 생성되고 각 정보의 설정 전에 호출!         |
+| created         | Vue Instance가 생성된 후 데이터들의 설정이 완료된 후 호출 |
+|                 |                                                           |
+|                 |                                                           |
+|                 |                                                           |
+|                 |                                                           |
+|                 |                                                           |
+|                 |                                                           |
+
 
 
 ## 디렉티브
@@ -65,4 +78,83 @@ v-html
 ➪model 데이터를 html화면에 출력
 
  
+
+
+
+## HTTP 통신: axios
+
+Vue에서 권고하는 HTTP통신 라이브러리
+
+promise 기반의 HTTP 통신 라이브러리이며 상대적으로 다른 HTTP통신 라이브러리들에 비해 문서화가 잘되고 API가 다양
+
+
+
+
+
+## Vue-router
+
+​	라우팅 : 웹 페이지 간의 이동 방법
+
+​	vue.js의 공식 라우터
+
+
+
+```javascript
+ <div id="app">
+      <h1>SSAFY - Router</h1>
+      <p>
+        <router-link to="/">HOME</router-link>
+        <router-link to="/board">게시판</router-link>
+        <router-link to="/qna">QnA</router-link>
+        <router-link to="/gallery">갤러리</router-link>
+      </p>
+
+      <!-- 현재 라우트에 맞는 컴포넌트가 렌더링 -->
+      <router-view></router-view>
+    </div>
+    <script>
+      // 라우트 컴포넌트
+      const Main = {
+        template: "<div>메인 페이지</div>",
+      };
+      const Board = {
+        template: "<div>자유 게시판</div>",
+      };
+      const QnA = {
+        template: "<div>질문 게시판</div>",
+      };
+      const Gallery = {
+        template: "<div>갤러리 게시판</div>",
+      };
+
+      // 라우터 객체 생성
+      const router = new VueRouter({
+        routes: [
+          {
+            path: "/",
+            component: Main,
+          },
+          {
+            path: ".board",
+            component: Board,
+          },
+          {
+            path: "/qna",
+            component: QnA,
+          },
+          {
+            path: "gallery",
+            component: Gallery,
+          },
+        ],
+      });
+
+      // Vue 인스턴트 라우터 주입
+      const app = new Vue({
+        el: "#app",
+        router,
+      });
+    </script>
+  
+```
 
